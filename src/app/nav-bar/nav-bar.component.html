@@ -25,19 +25,77 @@
       class="flex h-full grow justify-between items-center row-start-1 col-start-1 col-end-6 small-screen:col-start-2"
     >
       <!-- w-0 because if it isn't it gets its width from the navbar and doesn't shrink past a certain point -->
-      <div class="grid h-full w-0">
+      <div class="grid h-24 w-0">
         <div
-          class="row-start-1 col-start-1 h-full w-28 ml-5 flex flex-col justify-between p-2 small-screen:invisible"
+          class="h-full w-28 ml-5 row-start-1 col-start-1"
+          (click)="toggleDropdown()"
         >
           <div
-            class="w-full bg-primary dark:bg-secondary transition duration-500 h-5 rounded-md"
-          ></div>
+            class="h-full flex flex-col justify-between p-2 small-screen:invisible hover:scale-105 hover:cursor-pointer hover:opacity-90"
+          >
+            <div
+              class="w-full bg-primary dark:bg-secondary transition duration-500 h-5 rounded-md"
+            ></div>
+            <div
+              class="w-full bg-primary dark:bg-secondary transition duration-500 h-5 rounded-md"
+            ></div>
+            <div
+              class="w-full bg-primary dark:bg-secondary transition duration-500 h-5 rounded-md"
+            ></div>
+          </div>
+        </div>
+        <!-- The dropdown menu -->
+        <div
+          *ngIf="isDropdownSelected"
+          class="absolute bg-secondary w-full z-1 font-bold text-accent text-2xl mt-24 small-screen:invisible"
+        >
           <div
-            class="w-full bg-primary dark:bg-secondary transition duration-500 h-5 rounded-md"
-          ></div>
+            class="hover:cursor-pointer hover:opacity-90 h-16 mt-8"
+            routerLink="home"
+            (click)="toggleDropdown()"
+          >
+            <p
+              class="hover:cursor-pointer hover:scale-110 w-fit m-auto transition duration-500"
+            >
+              Home
+            </p>
+          </div>
+          <hr class="divide-neutral-800" />
           <div
-            class="w-full bg-primary dark:bg-secondary transition duration-500 h-5 rounded-md"
-          ></div>
+            class="hover:cursor-pointer hover:opacity-90 h-16 mt-8"
+            routerLink="portfolio"
+            (click)="toggleDropdown()"
+          >
+            <p
+              class="hover:cursor-pointer hover:scale-110 w-fit m-auto transition duration-500"
+            >
+              Portfolio
+            </p>
+          </div>
+          <hr />
+          <div
+            class="hover:cursor-pointer hover:opacity-90 h-16 mt-8"
+            routerLink="about"
+            (click)="toggleDropdown()"
+          >
+            <p
+              class="hover:cursor-pointer hover:scale-110 w-fit m-auto transition duration-500"
+            >
+              About
+            </p>
+          </div>
+          <hr />
+          <div
+            class="hover:cursor-pointer hover:opacity-90 h-16 mt-8"
+            routerLink="experience"
+            (click)="toggleDropdown()"
+          >
+            <p
+              class="hover:cursor-pointer hover:scale-110 w-fit m-auto transition duration-500"
+            >
+              Experience
+            </p>
+          </div>
         </div>
         <div
           class="flex items-center h-24 row-start-1 col-start-1 small-screen:visible invisible normal-screen:w-[1000px] normal-screen:justify-between"
