@@ -1,0 +1,125 @@
+<div class="w-full h-24 flex">
+  <div class="grid w-full grid-cols-5">
+    <!-- Profile picture div -->
+    <div
+      class="h-24 flex row-start-1 col-start-1 w-0 phone-screen:w-44 invisible small-screen:visible"
+    >
+      <div
+        class="group/profile w-44 flex items-center space-x-4 p-1 hover:cursor-pointer hover:opacity-90"
+        routerLink="home"
+      >
+        <img
+          src="../../assets/georgebanacos.png"
+          alt="A picture of George Banacos"
+          class="group-hover/profile:scale-105 rounded-full h-20 border-2 border-solid border-black border-secondary dark:border-primary transition duration-500"
+        />
+        <p
+          class="group-hover/profile:scale-105 text-lg font-bold text-primary dark:text-secondary transition duration-500"
+        >
+          George Banacos
+        </p>
+      </div>
+    </div>
+    <!-- All navbar elements including darkmode and themes  -->
+    <div
+      class="flex h-full grow justify-between items-center row-start-1 col-start-1 col-end-6 small-screen:col-start-2"
+    >
+      <!-- w-0 because if it isn't it gets its width from the navbar and doesn't shrink past a certain point -->
+      <div class="grid h-full w-0">
+        <div
+          class="row-start-1 col-start-1 h-full w-28 ml-5 flex flex-col justify-between p-2 small-screen:invisible"
+        >
+          <div
+            class="w-full bg-primary dark:bg-secondary transition duration-500 h-5 rounded-md"
+          ></div>
+          <div
+            class="w-full bg-primary dark:bg-secondary transition duration-500 h-5 rounded-md"
+          ></div>
+          <div
+            class="w-full bg-primary dark:bg-secondary transition duration-500 h-5 rounded-md"
+          ></div>
+        </div>
+        <div
+          class="flex items-center h-24 row-start-1 col-start-1 small-screen:visible invisible normal-screen:w-[1000px] normal-screen:justify-between"
+        >
+          <div
+            class="flex space-x-10 items-center grow p-16 font-bold text-lg text-primary dark:text-secondary transition duration-500 normal-screen:justify-between normal-screen:text-2xl"
+          >
+            <div
+              class="hover:cursor-pointer hover:scale-105 text-center transition duration-500"
+              routerLink="home"
+            >
+              Home
+            </div>
+            <div
+              class="hover:cursor-pointer hover:scale-105 text-center transition duration-500"
+              routerLink="portfolio"
+            >
+              Portfolio
+            </div>
+            <div
+              class="hover:cursor-pointer hover:scale-105 text-center transition duration-500"
+              routerLink="about"
+            >
+              About
+            </div>
+            <div
+              class="hover:cursor-pointer hover:scale-105 text-center transition duration-500"
+              routerLink="experience"
+            >
+              Experience
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center justify-between w-44 h-full p-3">
+        <select
+          class="w-20 grow h-full rounded-full p-1 font-bold text-primary bg-bgLight hover:cursor-pointer hover:scale-105"
+        >
+          <option
+            class="text-black-100"
+            (click)="this.themeService.setTheme('black')"
+          >
+            Black
+          </option>
+          <option
+            class="text-orangeMode"
+            (click)="this.themeService.setTheme('orange')"
+          >
+            Orange
+          </option>
+          <option
+            class="text-purpleMode"
+            (click)="this.themeService.setTheme('purple')"
+          >
+            Purple
+          </option>
+          <option
+            class="text-greenMode"
+            (click)="this.themeService.setTheme('green')"
+          >
+            Green
+          </option>
+          <option
+            class="text-redMode"
+            (click)="this.themeService.setTheme('red')"
+          >
+            Red
+          </option>
+          <option
+            class="text-blueMode"
+            (click)="this.themeService.setTheme('blue')"
+          >
+            Blue
+          </option>
+        </select>
+        <img
+          src="{{ this.themeService.getDarkModePhoto() }}"
+          alt="Light/darkmode photo"
+          class="w-16 h-12 hover:opacity-90 hover:cursor-pointer hover:scale-105 object-cover"
+          (click)="toggleDarkMode()"
+        />
+      </div>
+    </div>
+  </div>
+</div>

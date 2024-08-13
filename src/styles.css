@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: hsl(0, 0%, 0%);
+    --color-secondary: hsl(0, 0%, 100%);
+    --color-accent: hsl(0, 0%, 53%);
+    --color-text-base: hsl(0, 0%, 100%);
+    --color-bg-primary: hsl(0, 0%, 100%);
+    --color-bg-secondary: hsl(0, 0%, 0%);
+    --color-bgdark: hsl(0, 0%, 16%);
+  }
+}
+
+.theme-black {
+  --color-primary: hsl(0, 0%, 0%);
+  --color-secondary: hsl(0, 0%, 100%);
+  --color-accent: hsl(0, 0%, 53%);
+  --color-bg-light: hsl(0, 0%, 100%);
+  --color-bg-dark: hsl(0, 0%, 22%);
+}
+
+.theme-orange {
+  --color-primary: hsl(29, 100%, 40%);
+  --color-secondary: hsl(25, 100%, 65%);
+  --color-accent: hsl(25, 57%, 65%);
+  --color-bg-light: hsl(32, 100%, 84%);
+  --color-bg-dark: hsl(34, 48%, 14%);
+}
+
+.theme-purple {
+  --color-primary: hsl(270, 100%, 50%);
+  --color-secondary: hsl(270, 100%, 75%);
+  --color-accent: hsl(271, 91%, 36%);
+  --color-bg-light: hsl(270, 100%, 91%);
+  --color-bg-dark: hsl(271, 100%, 11%);
+}
+
+.theme-green {
+  --color-primary: hsl(120, 100%, 35%);
+  --color-secondary: hsl(143, 88%, 77%);
+  --color-accent: hsl(143, 38%, 47%);
+  --color-bg-light: hsl(120, 100%, 88%);
+  --color-bg-dark: hsl(120, 100%, 8%);
+}
+
+.theme-red {
+  --color-primary: hsl(0, 100%, 50%);
+  --color-secondary: hsl(0, 100%, 65%);
+  --color-accent: hsl(0, 83%, 88%);
+  --color-bg-light: hsl(0, 60%, 62%);
+  --color-bg-dark: hsl(0, 100%, 24%);
+}
+
+.theme-blue {
+  --color-primary: hsl(220, 100%, 50%);
+  --color-secondary: hsl(220, 100%, 75%);
+  --color-accent: hsl(220, 74%, 60%);
+  --color-bg-light: hsl(221, 82%, 85%);
+  --color-bg-dark: hsl(220, 100%, 13%);
+}
