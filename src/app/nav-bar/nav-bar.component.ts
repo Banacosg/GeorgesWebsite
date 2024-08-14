@@ -2,11 +2,12 @@ import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { ThemeService } from '../services/theme.service';
 import { RouterLink } from '@angular/router';
 import { DOCUMENT, NgIf } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [RouterLink, NgIf],
+  imports: [RouterLink, NgIf, RouterOutlet],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css',
 })

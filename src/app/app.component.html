@@ -6,11 +6,13 @@
 >
   <!-- Overflow x is hidden on the page! Be warned -->
   <div
-    class="h-screen overflow-x-hidden bg-bgLight dark:bg-bgDark transition duration-500"
+    class="h-screen overflow-x-hidden bg-bgLight dark:bg-bgDark transition duration-500 flex flex-col"
   >
-    <app-nav-bar></app-nav-bar>
-    <!-- Controls the width of content on any given page -->
-    <div>
+    <div class="fixed w-full">
+      <app-nav-bar></app-nav-bar>
+    </div>
+    <!-- Controls the width and height of content on any given page -->
+    <div class="w-full grow mt-24">
       <router-outlet></router-outlet>
     </div>
   </div>

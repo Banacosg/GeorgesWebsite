@@ -1,4 +1,4 @@
-<div class="w-full h-24 flex">
+<div class="w-full h-24 flex bg-bgLight dark:bg-bgDark transition duration-500">
   <div class="grid w-full grid-cols-5">
     <!-- Profile picture div -->
     <div
@@ -47,8 +47,9 @@
         <!-- The dropdown menu -->
         <div
           *ngIf="isDropdownSelected"
-          class="absolute bg-secondary w-full z-1 font-bold text-accent text-2xl mt-24 small-screen:invisible"
+          class="absolute bg-bgLight dark:bg-bgDark w-full z-1 font-bold text-accent text-2xl mt-24 small-screen:invisible"
         >
+          <hr class="divide-neutral-800" />
           <div
             class="hover:cursor-pointer hover:opacity-90 h-16 mt-8"
             routerLink="home"
@@ -96,6 +97,7 @@
               Experience
             </p>
           </div>
+          <hr />
         </div>
         <div
           class="flex items-center h-24 row-start-1 col-start-1 small-screen:visible invisible normal-screen:w-[1000px] normal-screen:justify-between"
