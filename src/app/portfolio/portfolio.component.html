@@ -1,1 +1,80 @@
-<p>portfolio works!</p>
+<div
+  *ngFor="let project of projects"
+  class="w-full p-4 text-primary dark:text-secondary transistion duration-500"
+>
+  <div class="flex flex-col mb-5 max-w-[1919px] m-auto">
+    <div class="flex flex-row justify-between items-center w-full">
+      <p
+        class="text-xl normal-screen:text-5xl font-bold transistion duration-500"
+      >
+        {{ project.name }}
+      </p>
+      <p
+        class="text-xl normal-screen:text-3xl font-semibold pl-10 transistion duration-500"
+      >
+        {{ project.year }}
+      </p>
+    </div>
+    <p
+      class="text-lg normal-screen:text-2xl font-medium transistion duration-500"
+    >
+      {{ project.projectType }}
+    </p>
+    <a
+      class="text-sm normal-screen:text-xl border-b-[1px] border-primary dark:border-secondary w-fit hover:scale-105 transistion duration-500"
+      href="{{ project.githubLink }}"
+      >GitHub</a
+    >
+  </div>
+  <p
+    class="text-md normal-screen:text-2xl font-medium text-accent max-w-[1000px] small-screen:m-auto transistion duration-500"
+  >
+    {{ project.description }}
+  </p>
+  <div
+    class="w-full flex flex-col mt-5"
+    *ngFor="let projImg of project.imagePaths"
+  >
+    <img
+      class="h-64 normal-screen:h-[400px] rounded-md object-contain hover:opacity-80 hover:cursor-pointer w-fit m-auto transistion duration-500"
+      src="{{ projImg.path }}"
+      alt="{{ projImg.description }}"
+      (click)="showImage(projImg.path, projImg.description)"
+    />
+    <p class="m-auto">{{ projImg.description }}</p>
+  </div>
+  <a
+    *ngIf="project.projectLink !== ''"
+    class="m-auto border-b-[1px] border-primary dark:border-secondary w-fit hover:scale-105 transistion duration-500 block"
+    href="{{ project.projectLink }}"
+    >Project Link</a
+  >
+  <div class="mt-10 border-accent border-2"></div>
+</div>
+<div
+  *ngIf="imagePopUp !== ''"
+  class="absolute block top-0 left-0 h-full w-full flex justify-center items-center flex-col bg-gray-100/50"
+  (click)="closeImage()"
+>
+  <div
+    class="flex flex-col w-[99%] h-fit max-h-[90vh] min-h-[200px] bg-bgLight dark:bg-bgDark p-2"
+    (click)="$event.stopPropagation()"
+  >
+    <img
+      class="relative top-0 left-0 w-[4vw] h-[4vw] max-w-[40px] max-h-[40px] ml-auto mb-1 hover:opacity-80 hover:scale-105 hover:cursor-pointer"
+      src="../../assets/exitbutton.png"
+      (click)="closeImage()"
+      alt="Exit button"
+    />
+    <div class="h-[80%] max-h-full m-auto">
+      <img
+        class="object-contain m-auto max-h-full"
+        src="{{ imagePopUp }}"
+        alt=""
+      />
+    </div>
+    <p class="text-center text-primary dark:text-secondary">
+      {{ imageDescriptionPopUp }}
+    </p>
+  </div>
+</div>
