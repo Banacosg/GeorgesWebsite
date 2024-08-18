@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("tailwind-gradient-mask-image")],
   darkMode: "class",
   theme: {
     screens: {

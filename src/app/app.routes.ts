@@ -4,10 +4,20 @@ import { AboutComponent } from './about/about.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ShowaboutComponent } from './about/showabout/showabout.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
+  {
+    path: 'about',
+    component: AboutComponent,
+    children: [
+      {
+        path: 'showabout',
+        component: ShowaboutComponent,
+      },
+    ],
+  },
   { path: 'experience', component: ExperienceComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },

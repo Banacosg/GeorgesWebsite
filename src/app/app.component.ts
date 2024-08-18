@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ThemeService } from './services/theme.service';
 import { CommonModule } from '@angular/common';
+import { ShowaboutComponent } from './about/showabout/showabout.component';
 
 @Component({
   selector: 'app-root',

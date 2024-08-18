@@ -1,1 +1,41 @@
-<p>about works!</p>
+<div
+  class="flex flex-row small-screen:flex-row normal-screen:w-[1919px] normal-screen:m-auto flex-wrap p-[1%] mt-10 w-full justify-between"
+>
+  <div
+    class="w-full small-screen:w-[49%] flex flex-col my-[1%] hover:scale-[1.01] hover:opacity-90 hover:cursor-pointer transition duration-300"
+    *ngFor="let about of aboutInfo"
+    routerLink="showabout"
+    (click)="showAbout(about)"
+  >
+    <div
+      class="flex flex-row justify-between align-center p-2 h-20 normal-screen:h-32"
+    >
+      <p
+        class="font-bold text-primary dark:text-secondary text-3xl normal-screen:text-6xl transition duration-500"
+      >
+        {{ about.title }}
+      </p>
+      <div class="h-16 w-16 normal-screen:h-32 normal-screen:w-32">
+        <img
+          class="object-contain rounded"
+          src="{{ about.picture }}"
+          alt="{{ about.picutreDescription }}"
+        />
+      </div>
+    </div>
+    <div
+      class="gradient-mask-b-[transparent,rgba(0,0,0,1.0)_0px,rgba(0,0,0,0.0)_80%]"
+    >
+      <p
+        class="normal-screen:text-2xl text-primary dark:text-secondary p-2 transition duration-500"
+      >
+        {{ get200Chars(about.description) }}
+      </p>
+    </div>
+  </div>
+  <router-outlet
+    id="text-container"
+    #routeroutlet
+    *ngIf="selectedAbout"
+  ></router-outlet>
+</div>
