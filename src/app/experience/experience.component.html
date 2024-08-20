@@ -1,1 +1,115 @@
-<p>experience works!</p>
+<!-- Importance selector -->
+<div
+  class="w-11/12 bg-red-100 m-auto bg-bgLightSecondary dark:bg-bgDarkSecondary rounded p-2 transition duration-500"
+>
+  <p
+    class="text-center font-semibold text-primary dark:text-secondary text-xl normal-screen:text-3xl transition duration-500"
+  >
+    Select Importance of Items:
+  </p>
+  <div class="w-full flex flex-row justify-center">
+    <select
+      class="w-full phone-screen:w-[80%] small-screen:w-[50%] normal-screen:text-3xl p-2 bg-bgLightSecondary dark:bg-bgDarkSecondary border-2 border-accent border-solid rounded text-xl text-primary dark:text-secondary m-auto [text-align-last:center] transition duration-500"
+      #importanceSelector
+      (change)="updateImportance(importanceSelector.value)"
+    >
+      <option *ngFor="let option of importance">
+        {{ option }}
+      </option>
+    </select>
+  </div>
+</div>
+<div class="flex phone-screen:flex-row flex-col w-full transition duration-500">
+  <!-- Jobs div -->
+  <div class="flex flex-col basis-[40%] p-2">
+    <p class="text-center text-accent text-3xl font-bold mb-2">Jobs</p>
+    @for (job of jobs; track $index) {
+    <div
+      *ngIf="job.importance >= curImportance"
+      class="dark:bg-bgDarkSecondary bg-bgLightSecondary rounded mb-4 p-1 transition duration-500"
+    >
+      <div class="flex justify-between items-center">
+        <p
+          class="dark:text-secondary text-primary font-bold text-xl transition duration-500"
+        >
+          {{ job.jobName }}
+        </p>
+        <p
+          class="dark:text-secondary text-primary font-semibold transition duration-500 text-right"
+        >
+          {{ job.position }}
+        </p>
+      </div>
+      <p class="inline-block text-accent transition duration-500">
+        {{ job.startDate }}-{{ job.endDate }}
+      </p>
+      <p
+        class="dark:text-secondary text-primary font-light transition duration-500"
+      >
+        {{ job.description }}
+      </p>
+    </div>
+    }
+  </div>
+  <div class="flex flex-col basis-[60%] small-screen:flex-row">
+    <!-- Tools -->
+    <div class="flex flex-col items-center">
+      <p class="text-center text-accent text-3xl font-bold mb-2">Tools</p>
+      <div class="grid normal-screen:grid-cols-2 grid-cols-1">
+        @for (tool of software; track $index) {
+        <div
+          *ngIf="tool.importance >= curImportance"
+          class="bg-bgLightSecondary dark:bg-bgDarkSecondary m-2 rounded p-1 transition duration-500"
+        >
+          <p
+            class="text-center text-2xl font-bold dark:text-secondary text-primary transition duration-500"
+          >
+            {{ tool.softwareName }}
+          </p>
+          <div class="flex flex-row justify-between text-xl text-accent">
+            <p>Years of Exp: {{ tool.yearsOfExperience }}</p>
+            <p>Skill {{ tool.skillLevel }}/5</p>
+          </div>
+          <p
+            class="font-light text-normal text-primary dark:text-secondary transition duration-500"
+          >
+            {{ tool.description }}
+          </p>
+        </div>
+        }
+      </div>
+    </div>
+    <!-- Classes -->
+    <div class="flex flex-col items-center">
+      <p class="text-center text-accent text-3xl font-bold mb-2">Classes</p>
+      <div class="grid h-fit">
+        @for (class of classes; track $index) {
+        <div
+          *ngIf="class.importance >= curImportance"
+          class="m-2 bg-bgLightSecondary dark:bg-bgDarkSecondary rounded p-1 transition duration-500"
+        >
+          <div
+            class="flex justify-between text-xl text-primary dark:text-secondary font-bold transition duration-500"
+          >
+            <p class="max-w-[80%]">{{ class.className }}</p>
+            <p>{{ class.school }}</p>
+          </div>
+          <div class="flex flex-row flex-wrap items-center justify-center">
+            <div
+              *ngFor="let tool of class.toolsUsed"
+              class="rounded dark:bg-bgLightSecondary bg-bgDarkSecondary m-1 p-2 h-fit text-secondary dark:text-primary transition duration-500"
+            >
+              {{ tool }}
+            </div>
+          </div>
+          <p
+            class="text-primary dark:text-secondary font-light transition duration-500"
+          >
+            {{ class.learningDescription }}
+          </p>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
