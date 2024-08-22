@@ -1,10 +1,8 @@
-import { Component, inject, Input, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CommonModule, DOCUMENT } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { AboutinfoService } from '../aboutinfo.service';
-import { Observable, Subscribable, Subscriber, Subscription } from 'rxjs';
 import { AboutInfo } from '../aboutinfo';
-import { AboutComponent } from '../about.component';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -16,8 +14,11 @@ import { NgIf } from '@angular/common';
 })
 export class ShowaboutComponent {
   aboutInfo?: AboutInfo;
+  /**
+   *
+   * @param aboutInfoService The service that provides all about information
+   */
   constructor(private aboutInfoService: AboutinfoService) {
     aboutInfoService.curAboutInfo.subscribe((msg) => (this.aboutInfo = msg));
-    this.aboutInfo = aboutInfoService.curAboutInfo.value;
   }
 }

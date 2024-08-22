@@ -60,12 +60,6 @@
     class="flex flex-col w-[99%] h-fit max-h-[90vh] min-h-[200px] bg-bgLight dark:bg-bgDark p-2"
     (click)="$event.stopPropagation()"
   >
-    <img
-      class="relative top-0 left-0 w-[4vw] h-[4vw] max-w-[40px] max-h-[40px] ml-auto mb-1 hover:opacity-80 hover:scale-105 hover:cursor-pointer"
-      src="../../assets/exitbutton.png"
-      (click)="closeImage()"
-      alt="Exit button"
-    />
     <div class="h-[80%] max-h-full m-auto">
       <img
         class="object-contain m-auto max-h-full"
@@ -76,5 +70,11 @@
     <p class="text-center text-primary dark:text-secondary">
       {{ imageDescriptionPopUp }}
     </p>
+    <img
+      class="relative top-0 left-0 w-[4vw] h-[4vw] max-w-[40px] max-h-[40px] ml-auto mb-1 hover:opacity-80 hover:scale-105 hover:cursor-pointer"
+      src="../../assets/exitbutton.png"
+      (click)="closeImage()"
+      alt="Exit button"
+    />
   </div>
 </div>

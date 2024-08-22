@@ -12,37 +12,56 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './nav-bar.component.css',
 })
 export class NavBarComponent {
-  themeService: ThemeService;
   isDropdownSelected = false;
   window = this.getWindow();
 
+  /**
+   *
+   * @param themeService The service that handles the current theme
+   * @param _doc The document
+   */
   constructor(
-    themeService: ThemeService,
+    public themeService: ThemeService,
     @Inject(DOCUMENT) private _doc: Document
-  ) {
-    this.themeService = themeService;
-  }
+  ) {}
 
-  toggleDarkMode() {
-    this.themeService.updateLight(this.themeService.lightSignal());
+  /**
+   * When the darkmode button is pressed it toggles the light/dark mode
+   */
+  public toggleDarkMode(): void {
+    this.themeService.updateLight();
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
+  /**
+   * Whenever the window is resized the screen is updated.
+   */
+  private onResize(event: any): void {
     this.updateScreen();
   }
 
-  getWindow(): Window | null {
+  /**
+   *
+   * @returns a window object
+   */
+  private getWindow(): Window | null {
     return this._doc.defaultView;
   }
 
-  updateScreen() {
-    if (window!.innerWidth < 960) {
+  /**
+   * If the window width is greater than 960 pixel close the dropdown menu
+   * so that is doesn't make the webpage have bad behaviors
+   */
+  private updateScreen(): void {
+    if (window.innerWidth > 960) {
       this.isDropdownSelected = false;
     }
   }
 
-  toggleDropdown() {
+  /**
+   * Shows the drop down if hidden and hides it if it's showing
+   */
+  public toggleDropdown(): void {
     this.isDropdownSelected = !this.isDropdownSelected;
   }
 }

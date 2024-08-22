@@ -13,9 +13,14 @@ import { ShowaboutComponent } from './about/showabout/showabout.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'GeorgesWebsite';
+  title = "George's Website";
   themeService: ThemeService;
 
+  /**
+   *
+   * @param themeService injects the theme service responsible for controlling
+   * theme
+   */
   constructor(themeService: ThemeService) {
     this.themeService = themeService;
   }

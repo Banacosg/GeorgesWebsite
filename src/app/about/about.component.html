@@ -1,6 +1,7 @@
 <div
   class="flex flex-row small-screen:flex-row normal-screen:w-[1919px] normal-screen:m-auto flex-wrap p-[1%] mt-10 w-full justify-between"
 >
+  <!-- The about sections -->
   <div
     class="w-full small-screen:w-[49%] flex flex-col my-[1%] hover:scale-[1.01] hover:opacity-90 hover:cursor-pointer transition duration-300"
     *ngFor="let about of aboutInfo"
@@ -33,6 +34,7 @@
       </p>
     </div>
   </div>
+  <!-- Where the expanded about shows up -->
   <router-outlet
     id="text-container"
     #routeroutlet

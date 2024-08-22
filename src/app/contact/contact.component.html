@@ -1,0 +1,158 @@
+<div class="w-full mt-5 flex flex-col">
+  <!-- Header -->
+  <p
+    class="text-center text-3xl normal-screen:text-6xl text-primary dark:text-secondary font-bold transition duration-500"
+  >
+    Contact me
+  </p>
+  <div
+    class="flex w-full small-screen:flex-row flex-col normal-screen:w-3/4 w-full m-auto"
+  >
+    <!-- Contact information -->
+    <div
+      class="flex justify-between flex-col basis-1/2 m-5 bg-bgLightSecondary dark:bg-bgDarkSecondary rounded p-2 text-primary dark:text-secondary transition duration-500"
+    >
+      <p
+        class="font-bold text-xl normal-screen:text-4xl text-center transition duration-500"
+      >
+        Availability
+      </p>
+      <p class="normal-screen:text-xl">{{ availability }}</p>
+      <div
+        class="flex w-full justify-between mb-2 border-b-2 border-accent normal-screen:text-xl transition duration-500"
+      >
+        <p>Location</p>
+        <p>Rochester, NY</p>
+      </div>
+      <div
+        class="flex w-full justify-between mb-2 border-b-2 border-accent normal-screen:text-xl transition duration-500"
+      >
+        <p>Email</p>
+        <p>gpb5030&#64;g&#46;rit&#46;edu</p>
+      </div>
+    </div>
+    <!-- form -->
+    <div
+      class="basis-1/2 m-5 rounded p-2 bg-bgLightSecondary dark:bg-bgDarkSecondary transition duration-500"
+    >
+      <p
+        class="text-xl normal-screen:text-3xl text-primary dark:text-secondary font-bold mb-2 text-center transition duration-500"
+      >
+        Fill out the form below to get into contact with me!
+      </p>
+      <div *ngIf="validSubmission">
+        <p class="text-center text-2xl text-primary dark:text-secondary">
+          Successful Submission
+        </p>
+      </div>
+      <form *ngIf="!validSubmission" [formGroup]="contactForm">
+        <div class="flex phone-screen:flex-row flex-col phone-screen:space-x-3">
+          <div class="relative z-0 w-full mb-2 group border-b-2 border-accent">
+            <input
+              name="name"
+              formControlName="name"
+              class="block py-2.5 w-full text-accent bg-transparent focus:outline-none focus:ring-0 peer"
+              placeholder=" "
+              maxlength="100"
+              required
+            />
+            <label
+              class="peer-focus:font-medium absolute text-sm text-primary dark:text-secondary font-bold duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 transition duration-500"
+            >
+              <div class="block">
+                <p class="inline-block">Name</p>
+                <p
+                  *ngIf="
+                    (!contactForm.controls['name'].dirty ||
+                      contactForm.controls['name'].invalid) &&
+                    attemptedSubmit
+                  "
+                  class="inline-block text-red-700"
+                >
+                  &nbsp;Field required!
+                </p>
+              </div></label
+            >
+          </div>
+          <div class="relative z-0 w-full mb-2 group border-b-2 border-accent">
+            <input
+              name="Email"
+              formControlName="email"
+              class="block py-2.5 w-full text-accent bg-transparent focus:outline-none focus:ring-0 peer"
+              placeholder=" "
+              maxlength="50"
+              email
+              required
+            />
+            <label
+              class="peer-focus:font-medium absolute text-sm text-primary dark:text-secondary font-bold duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 transition duration-500"
+              ><div class="block">
+                <p class="inline-block">Email</p>
+                <p
+                  *ngIf="
+                    (contactForm.controls['email'].invalid ||
+                      !contactForm.controls['email'].touched) &&
+                    attemptedSubmit
+                  "
+                  class="inline-block text-red-700"
+                >
+                  &nbsp;Must be a valid email!
+                </p>
+              </div></label
+            >
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <div class="relative z-0 w-full mb-2 group border-b-2 border-accent">
+            <input
+              name="Subject"
+              formControlName="subject"
+              class="block py-2.5 w-full text-accent bg-transparent focus:outline-none focus:ring-0 peer"
+              placeholder=" "
+              maxlength="100"
+            />
+            <label
+              class="absolute peer-focus:font-medium text-sm text-primary dark:text-secondary font-bold duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 transition duration-500"
+              ><div class="block">
+                <p class="inline-block">Subject</p>
+              </div></label
+            >
+          </div>
+          <div class="relative z-0 w-full mb-2 group border-b-2 border-accent">
+            <input
+              name="Content"
+              formControlName="content"
+              class="block py-2.5 w-full text-accent bg-transparent focus:outline-none focus:ring-0 peer"
+              placeholder=" "
+              maxlength="2000"
+              required
+            />
+            <label
+              class="absolute peer-focus:font-medium text-sm text-primary dark:text-secondary font-bold duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] peer-focus:start-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 transition duration-500"
+              ><div class="block">
+                <p class="inline-block">Content</p>
+                <p
+                  *ngIf="
+                    (!contactForm.controls['content'].dirty ||
+                      contactForm.controls['content'].invalid) &&
+                    attemptedSubmit
+                  "
+                  class="inline-block text-red-700"
+                >
+                  &nbsp;Field required!
+                </p>
+              </div></label
+            >
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="block m-auto border-2 border-accent p-2 rounded w-3/4 text-primary dark:text-secondary font-bold hover:scale-105 transition duration-1000"
+          (click)="subEmail()"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

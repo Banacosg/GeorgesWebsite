@@ -6,6 +6,9 @@ import { BehaviorSubject, Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class AboutinfoService {
+  // This is used for the selected about information. The overlay will display
+  // whatever is in the curAboutInfo variable. It uses a behavior subject for
+  // ease of updating.
   curAboutInfo = new BehaviorSubject<AboutInfo>({
     title: '',
     picture: '',
@@ -13,6 +16,12 @@ export class AboutinfoService {
     description: '',
   });
 
+  // I feel I should justify the data that is in plain text here. I understand
+  // that the proper way to do this would be to store it in a DB. However,
+  // I would have to set up a backend for that which I would have to find a
+  // host for and spend money on. Rather than doing that I decided to store it
+  // here so that I can save money. Besides, it works anyways and doesn't need
+  // to be loosely coupled.
   aboutInfoList: AboutInfo[] = [
     {
       title: 'RIT',
@@ -46,15 +55,27 @@ export class AboutinfoService {
 
   constructor() {}
 
-  setCurAbout(aboutInfo: AboutInfo) {
+  /**
+   * Sets the next current about
+   * @param aboutInfo
+   */
+  public setCurAbout(aboutInfo: AboutInfo): void {
     this.curAboutInfo.next(aboutInfo);
   }
 
-  getSelectedAbout() {
+  /**
+   * Gets the curAboutInfo BehaviorSubject for observers to subscribe to
+   * @returns The currentAboutInfo subject
+   */
+  public getSelectedAbout(): BehaviorSubject<AboutInfo> {
     return this.curAboutInfo;
   }
 
-  getAboutInfo() {
+  /**
+   * Get all of the about objects
+   * @returns all of the about information as an array
+   */
+  public getAboutInfo(): AboutInfo[] {
     return this.aboutInfoList;
   }
 }
