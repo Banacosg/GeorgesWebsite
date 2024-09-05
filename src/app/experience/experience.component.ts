@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Classes, Importance, Job, Software } from './experience';
 import { ExperienceService } from './experience.service';
 import { NgFor, NgSwitch, NgSwitchCase } from '@angular/common';
@@ -17,7 +17,11 @@ export class ExperienceComponent {
   software: Software[];
   classes: Classes[];
   jobs: Job[];
+  // Every job, class and software has an importance. This array has the
+  // options importance.
   importance = ['Very Important Only', 'Important', 'All'];
+  // The current selected importance is very important to keep the experience
+  // page less cluttered
   curImportance = Importance.veryImportant;
 
   public constructor() {
@@ -26,6 +30,10 @@ export class ExperienceComponent {
     this.jobs = this.experienceService.getJobs();
   }
 
+  /**
+   * Changes the importance based on the user selection
+   * @param importance The user selected importance
+   */
   public updateImportance(importance: string): void {
     if (importance === 'Very Important Only') {
       this.curImportance = Importance.veryImportant;

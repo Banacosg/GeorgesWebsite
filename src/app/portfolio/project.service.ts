@@ -5,12 +5,18 @@ import { Project } from './project';
   providedIn: 'root',
 })
 export class ProjectService {
+  // I feel I should justify the data that is in plain text here. I understand
+  // that the proper way to do this would be to store it in a DB. However,
+  // I would have to set up a backend for that which I would have to find a
+  // host for and spend money on. Rather than doing that I decided to store it
+  // here so that I can save money. Besides, it works anyways and doesn't need
+  // to be loosely coupled.
   projects: Project[] = [
     {
       name: 'They Website',
       year: 2024,
       description:
-        "This is the first website I ever created. I used this project to get a better handle on HTML, CSS and Javascript that I learned earlier that summer. One of my favorite aspects of the project was the testimonial menu. I craeted the menu from the ground up using no CMS. The contents of the website is strange but it has a message that I hope you can find. Although it isn't much I had fun creating it and learned a lot.",
+        "This is the first website I ever created. I used this project to get a better handle on HTML, CSS and Javascript that I learned earlier that summer. One of my favorite aspects of the project was the testimonial menu. I created the menu from the ground up using no CMS. The contents of the website is strange but it has a message that I hope you can find. Although it isn't much, I had fun creating it and learned a lot.",
       projectType: 'Personal Project',
       imagePaths: [
         {
@@ -25,7 +31,7 @@ export class ProjectService {
       name: "Latarte's Barn Doors",
       year: 2024,
       description:
-        'After creating my first website I learned of the importance of a framework. I took an online Angular course to learn the basics of Angular. To sharpen my skills I created this website. It is a webstore with some additional features that gave me plenty of practice with Angular. Among the many things learned were routing, life cycle hooks, services, and responsize design. The directives and component structure were welcome additions as well.',
+        'After creating my first website I learned the importance of a framework. I took an online Angular course to learn the basics of Angular. To sharpen my skills I created this website. It is a webstore with some additional features that gave me plenty of practice with Angular. Among the many things I learned were routing, life cycle hooks, services, and responsive design. The directives and component structure were welcome additions as well.',
       projectType: 'Personal Project',
       imagePaths: [
         {
@@ -41,7 +47,7 @@ export class ProjectService {
       name: 'Graph Project',
       year: 2024,
       description:
-        'Ever since started college I have always had an interest in graphs. I had some free time so I decided to create a relatively barebones desktop application that could be used to create graphs. It adhears to the MVC architecture and was created using JavaFX. One of the more challenging aspects of the project was getting the graph to scale as the window was resized. Another challenge was creating hitboxes for the lines. However, through a week of hard work, the application eventually worked and had a few features. Feel free to download it from github and play around with it.',
+        'Ever since I started college I have always had an interest in graphs. I had some free time, so I decided to create a relatively barebones desktop application that could be used to create graphs. It adheres to the MVC architecture and was created using JavaFX. One of the more challenging aspects of the project was getting the graph to scale as the window was resized. Another challenge was creating hitboxes for the lines. However, through hard work, the application eventually worked and had a few features. Feel free to download it from github and play around with it.',
       projectType: 'Personal Project',
       imagePaths: [
         {
@@ -57,7 +63,7 @@ export class ProjectService {
       name: 'AI Project',
       year: 2023,
       description:
-        'It is the 2020s, the time of AI. It is necessary for everyone to be somewhat aquainted with AI. I took on a beginner project of creating a CNN to be trained and tested on the MINIST dataset (the hand-written digit dataset) and CIFAR10 (the dataset with certain classes of objects). With modern tools it didn\t take long to get a model operational. I used PyTorch to create the layers of the CNN and define the hyperparameters. When the model was tested it scored a 99.1% on MINIST. This project gave me a basic understanding of neural networks and the modern tools to create them.',
+        "It is the 2020s, the time of AI. It is necessary for everyone to be somewhat aquainted with AI. I took on a beginner project of creating a CNN to be trained and tested on the MINIST dataset (the hand-written digit dataset) and CIFAR10 (the dataset with certain classes of objects). With modern tools it didn't take long to get a model operational. I used PyTorch to create the layers of the CNN and define the hyperparameters. When the model was tested it scored a 99.1% on MINIST. This project gave me a basic understanding of neural networks and the modern tools to create them.",
       projectType: 'Personal Project',
       imagePaths: [
         {
@@ -114,7 +120,7 @@ export class ProjectService {
       name: 'Multi-Threaded Prime Number Generator',
       year: 2023,
       description:
-        'As a part of a class in parallel and distributed system I had to create a multi-threaded prime number generator. I created a prime number generator using the Miller-Rabin algorithm. Along with the extremely fast algorithm, it is also a multi-threaded which allows it to leverage many cores. This allows my algorithm to generate over 100 1024 bit primes in less than 10 seconds.',
+        'As a part of a class in parallel and distributed system I had to create a multi-threaded prime number generator. I created a prime number generator using the Miller-Rabin algorithm. Along with the extremely fast algorithm, it is also a multi-threaded application, which allows it to leverage many cores. This allows my algorithm to generate over 100 1024 bit primes in less than 10 seconds.',
       projectType: 'School Project',
       imagePaths: [
         {
@@ -127,7 +133,11 @@ export class ProjectService {
     },
   ];
 
-  getProjects(): Project[] {
+  /**
+   *
+   * @returns all the projects
+   */
+  public getProjects(): Project[] {
     return this.projects;
   }
 

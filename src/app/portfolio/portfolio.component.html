@@ -1,3 +1,4 @@
+<!-- All of the projects -->
 <div
   *ngFor="let project of projects"
   class="w-full p-4 text-primary dark:text-secondary transistion duration-500"
@@ -51,6 +52,7 @@
   >
   <div class="mt-10 border-accent border-2"></div>
 </div>
+<!-- The html of the popup. This is very touchy code -->
 <div
   *ngIf="imagePopUp !== ''"
   class="absolute block top-0 left-0 h-full w-full flex justify-center items-center flex-col bg-gray-100/50"

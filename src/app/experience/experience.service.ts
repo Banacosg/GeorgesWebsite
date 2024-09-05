@@ -5,6 +5,12 @@ import { Job, Software, Classes, Importance } from './experience';
   providedIn: 'root',
 })
 export class ExperienceService {
+  // I feel I should justify the data that is in plain text here. I understand
+  // that the proper way to do this would be to store it in a DB. However,
+  // I would have to set up a backend for that which I would have to find a
+  // host for and spend money on. Rather than doing that I decided to store it
+  // here so that I can save money. Besides, it works anyways and doesn't need
+  // to be loosely coupled.
   jobs: Job[] = [
     {
       jobName: 'CDS Legal',
@@ -12,7 +18,7 @@ export class ExperienceService {
       startDate: '05/2024',
       endDate: '08/2024',
       description:
-        'Complete Disvoery Source (CDS) is a company that manages legal data for legal companies. CDS was my first job in the technology industry. My main role at the company was doing odd tasks and projects. I did an audit of the DNS server and Exchange Online to clean both of those services up. I wrote many Python and Powershell scripts to help with those projects and others. I also learned about various functions of Active Directory on the job along with Solarwinds and Relativity. ',
+        'Complete Discovery Source (CDS) is a company that manages legal data for legal companies. CDS was my first job in the technology industry. My main role at the company was doing odd tasks and projects. I did an audit of the DNS server and Exchange Online to clean both of those services up. I wrote many Python and Powershell scripts to help with those projects and others. I also learned about various functions of Active Directory on the job along with Solarwinds and Relativity. ',
       importance: Importance.veryImportant,
     },
     {
@@ -21,7 +27,7 @@ export class ExperienceService {
       startDate: '04/2019',
       endDate: '03/2024',
       description:
-        'Hannaford is a supermarket company where I worked my first job. For my time at Hannaford I was a loyal associate who through hard work, worked my way up from no experience to being a supervisor. I worked hard to improve my skills at the job. I also led a cashier competition to help the cashier become faster to give the customers a better experience.',
+        'Hannaford is a supermarket company where I worked my first job. For my time at Hannaford, I was a loyal associate who, through hard work, worked my way up from no experience to being a supervisor. I worked hard to improve my skills at the job. I also led a cashier competition to help the cashiers become faster to give the customers a better experience.',
       importance: Importance.important,
     },
     {
@@ -30,7 +36,7 @@ export class ExperienceService {
       startDate: '05/2023',
       endDate: '08/2023',
       description:
-        'Tallo properties is a company that owns and maintains properties. Tallo Properties was a summer job where I learned a lot of unexpected skills. Although not relevant to software engineering, these skills are relevant to life. I learned a lot of skills relevant to fixing houses or making them better. For the most part I fixed and painted walls but there were a smattering of other skills that I learned.',
+        'Tallo properties is a company that owns and maintains properties. Tallo Properties was a summer job where I learned a lot of unexpected skills. Although not relevant to software engineering, these skills are relevant to life. I learned a lot of skills pertaining to to fixing houses or making them better. For the most part I fixed and painted walls but there were a smattering of other skills that I learned.',
       importance: Importance.important,
     },
   ];
@@ -40,7 +46,7 @@ export class ExperienceService {
       softwareName: 'Python',
       yearsOfExperience: 4,
       description:
-        "I\ve been working in Python since I was in highschool in 2020. I've done many school assignments in Python and wrote many scripts. I enjoy using the language for quick and easy projects.",
+        "I've been working in Python since I was in highschool in 2020. I've done many school assignments in Python and wrote many scripts. I enjoy using the language for quick and easy projects.",
       skillLevel: 3,
 
       importance: Importance.veryImportant,
@@ -76,7 +82,7 @@ export class ExperienceService {
       softwareName: 'C',
       yearsOfExperience: 2,
       description:
-        "In the C language I learned a lot about the hidden part of programming in higher level languages suchas Java or Python. Pointers, memory allocation and freeing. Although I don't often find myself using C I have used to edit compilers and create a garbage collection system.",
+        "In the C language I learned a lot about the parts that are hidden when programming in higher level languages such as Java or Python. I learned pointers, memory allocation and freeing. Although I don't often find myself using C I have used it to edit compilers and create a garbage collection system.",
       skillLevel: 3,
 
       importance: Importance.important,
@@ -85,7 +91,7 @@ export class ExperienceService {
       softwareName: 'HTML',
       yearsOfExperience: 2,
       description:
-        "HTML is a language that I;ve used to create websites. I've spent a lot of time recently learning the ins and outs of HTML elements and how to best manipulate a the DOM tree to achieve desired effects.",
+        "HTML is a language that I've used to create websites. I've spent a lot of time recently learning the ins and outs of HTML elements and how to best manipulate a the DOM tree to achieve desired effects.",
       skillLevel: 4,
 
       importance: Importance.veryImportant,
@@ -121,7 +127,7 @@ export class ExperienceService {
       softwareName: 'TypeScript',
       yearsOfExperience: 1,
       description:
-        "Where would this website be without type script? It wouldn't exist. I use Angular TS so all the functionality on this web page uses typescript. My experience with typescript goes as far as my experience with Angular.",
+        "Where would this website be without TypeScript? It wouldn't exist. I use Angular TS so all the functionality on this web page uses typescript. My experience with typescript goes as far as my experience with Angular.",
       skillLevel: 2,
 
       importance: Importance.important,
@@ -148,7 +154,7 @@ export class ExperienceService {
       softwareName: 'SML',
       yearsOfExperience: 1,
       description:
-        'Standard Meta Language is a programming language that heaviliy uses pattern matching. Although unconventional it has its use cases such as in syntactic parsing. I used this language to write a syntax parser in one of my classes. Although not intuitive, it expanded my horizons.',
+        'Standard Meta Language is a programming language that heavily uses pattern matching. Although unconventional, it has its use cases such as in syntactic parsing. I used this language to write a syntax parser in one of my classes. Although not intuitive, it expanded my horizons.',
       skillLevel: 1,
 
       importance: Importance.unimportant,
@@ -211,7 +217,7 @@ export class ExperienceService {
       softwareName: 'Relativity',
       yearsOfExperience: 1,
       description:
-        'A software CDS Legal used often was relativity. Relativity has to do with how the SQL servers run. I am familiar with the software and its funciton.',
+        'A software CDS Legal used often was Relativity. Relativity has to do with how the SQL servers run. I am familiar with the software and its funciton.',
       skillLevel: 1,
 
       importance: Importance.unimportant,
@@ -220,7 +226,7 @@ export class ExperienceService {
       softwareName: 'Git Versioning',
       yearsOfExperience: 3,
       description:
-        "All of my versioning is done with Git. I started using Git as soon as I started college. Although I'm not a profession at versioning I am familiar with the basic functionality.",
+        "All of my versioning is done with Git. I started using Git as soon as I started college. Although I'm not a professional at versioning, I am familiar with the basic functionality.",
       skillLevel: 3,
 
       importance: Importance.veryImportant,
@@ -287,7 +293,7 @@ export class ExperienceService {
       school: 'RIT',
       toolsUsed: [],
       learningDescription:
-        'Throughout high school and college I learned calculus through multivariable. The knowledge is a greate tool for being able to understand any physical or purly mathematical problem.',
+        'Throughout high school and college I learned calculus, up through multivariable. The knowledge is a greate tool for being able to understand any physical or purely mathematical problem.',
 
       importance: Importance.important,
     },
@@ -296,7 +302,7 @@ export class ExperienceService {
       school: 'RIT',
       toolsUsed: ['Python', 'Vim', 'VSC'],
       learningDescription:
-        "I learned about common algorithms such as Dijkstra's algorithm, binary search, Strassen's Algorithm, and sorting. I also learned the theory behind algorithms and how way to figure out algorithms or myself.",
+        "I learned about common algorithms such as Dijkstra's algorithm, binary search, Strassen's Algorithm, and sorting. I also learned the theory behind algorithms and how I figure out algorithms for myself.",
 
       importance: Importance.veryImportant,
     },
@@ -357,7 +363,7 @@ export class ExperienceService {
       school: 'RIT',
       toolsUsed: [],
       learningDescription:
-        'To finish my math minor I took a combinatorics class to better understand how count. That is what combinatorics is, a field in mathematics to count how many of something there is. This class taught me many methods of counting and gave me the ability to count in difficult situation, such as a lot of restraints on objects.',
+        'To finish my math minor, I took a combinatorics class to better understand how to count. That is what combinatorics is, a field in mathematics to count how many of something there is. This class taught me many methods of counting and gave me the ability to count in difficult situations, such as with a lot of restraints on objects.',
 
       importance: Importance.important,
     },
@@ -375,7 +381,7 @@ export class ExperienceService {
       school: 'RIT',
       toolsUsed: ['Wireshark', 'Packet Tracer'],
       learningDescription:
-        'This class focused on the first four layers of the OSI model of networking. We started by learning about the physical layer and worked our way to the transport layer. We learned about, VLANS, LANs, subnetting, supernetting, switches, routers, and many protocols.',
+        'This class focused on the first four layers of the OSI model of networking. We started by learning about the physical layer and worked our way to the transport layer. We learned about VLANS, LANs, subnetting, supernetting, switches, routers, and many protocols.',
 
       importance: Importance.important,
     },
@@ -383,14 +389,26 @@ export class ExperienceService {
 
   constructor() {}
 
+  /**
+   *
+   * @returns the job array
+   */
   public getJobs(): Job[] {
     return this.jobs;
   }
 
+  /**
+   *
+   * @returns the software array
+   */
   public getSoftware(): Software[] {
     return this.software;
   }
 
+  /**
+   *
+   * @returns the classes array
+   */
   public getClasses(): Classes[] {
     return this.classes;
   }

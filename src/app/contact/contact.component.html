@@ -47,6 +47,12 @@
       </div>
       <form *ngIf="!validSubmission" [formGroup]="contactForm">
         <div class="flex phone-screen:flex-row flex-col phone-screen:space-x-3">
+          <!-- 
+            This goes for all the other form sections: 
+            The div directly below is the underline, 
+            The label is moved on top of the input box and is translated 
+            via peer when the input is selected
+            -->
           <div class="relative z-0 w-full mb-2 group border-b-2 border-accent">
             <input
               name="name"

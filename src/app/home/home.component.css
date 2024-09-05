@@ -1,3 +1,4 @@
+/* Some css to adjust my face in certain situations */
 @media (min-height: 960px) and (max-width: 1900px) {
   .home-container {
     flex-direction: column;
