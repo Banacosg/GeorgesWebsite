@@ -155,46 +155,73 @@
       </div>
       <!-- Color selection div -->
       <div class="flex items-center justify-between w-44 h-full p-3">
-        <select
+        <div
+          class="flex w-20 justify-center items-center grow h-full rounded-full p-1 font-bold text-primary bg-bgLight hover:cursor-pointer hover:scale-105 group"
+        >
+          <p class="text-center">{{ this.curColor }}</p>
+          <div
+            class="absolute top-[72px] w-full bg-secondary z-1 hidden group-hover:block"
+          >
+            <div
+              class="block p-2 text-black hover:scale-105 hover:opacity-90"
+              (click)="this.switchTheme('black')"
+            >
+              Black
+            </div>
+            <div
+              class="block p-2 text-orangeMode hover:scale-105 hover:opacity-90"
+              (click)="this.switchTheme('orange')"
+            >
+              Orange
+            </div>
+            <div
+              class="block p-2 text-purpleMode hover:scale-105 hover:opacity-90"
+              (click)="this.switchTheme('purple')"
+            >
+              Purple
+            </div>
+            <div
+              class="block p-2 text-greenMode hover:scale-105 hover:opacity-90"
+              (click)="this.switchTheme('green')"
+            >
+              Green
+            </div>
+            <div
+              class="block p-2 text-redMode hover:scale-105 hover:opacity-90"
+              (click)="this.switchTheme('red')"
+            >
+              Red
+            </div>
+            <div
+              class="block p-2 text-blueMode hover:scale-105 hover:opacity-90"
+              (click)="switchTheme('blue')"
+            >
+              Blue
+            </div>
+          </div>
+        </div>
+        <!-- <select
           class="w-20 grow h-full rounded-full p-1 font-bold text-primary bg-bgLight hover:cursor-pointer hover:scale-105"
         >
-          <option
-            class="text-black-100"
-            (click)="this.themeService.setTheme('black')"
-          >
+          <option class="text-black-100" (click)="this.switchTheme('black')">
             Black
           </option>
-          <option
-            class="text-orangeMode"
-            (click)="this.themeService.setTheme('orange')"
-          >
+          <option class="text-orangeMode" (click)="this.switchTheme('orange')">
             Orange
           </option>
-          <option
-            class="text-purpleMode"
-            (click)="this.themeService.setTheme('purple')"
-          >
+          <option class="text-purpleMode" (click)="this.switchTheme('purple')">
             Purple
           </option>
-          <option
-            class="text-greenMode"
-            (click)="this.themeService.setTheme('green')"
-          >
+          <option class="text-greenMode" (click)="this.switchTheme('green')">
             Green
           </option>
-          <option
-            class="text-redMode"
-            (click)="this.themeService.setTheme('red')"
-          >
+          <option class="text-redMode" (click)="this.switchTheme('red')">
             Red
           </option>
-          <option
-            class="text-blueMode"
-            (click)="this.themeService.setTheme('blue')"
-          >
+          <option class="text-blueMode" (click)="switchTheme('blue')">
             Blue
           </option>
-        </select>
+        </select> -->
         <!-- Dark mode section -->
         <img
           src="{{ this.themeService.getDarkModePhoto() }}"

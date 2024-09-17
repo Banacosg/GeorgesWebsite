@@ -14,6 +14,7 @@ import { RouterOutlet } from '@angular/router';
 export class NavBarComponent {
   isDropdownSelected = false;
   window = this.getWindow();
+  curColor = 'Black';
 
   /**
    *
@@ -38,6 +39,11 @@ export class NavBarComponent {
    */
   private onResize(event: any): void {
     this.updateScreen();
+  }
+
+  public switchTheme(theme: string): void {
+    this.curColor = theme.slice(0, 1).toUpperCase() + theme.slice(1);
+    this.themeService.setTheme(theme);
   }
 
   /**

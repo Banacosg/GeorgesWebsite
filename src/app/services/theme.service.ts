@@ -29,7 +29,7 @@ export class ThemeService {
    * @param theme the color theme
    */
   public setTheme(theme: string) {
-    this.themeSignal.set(theme);
+    this.themeSignal.update((value) => theme);
   }
 
   /**
