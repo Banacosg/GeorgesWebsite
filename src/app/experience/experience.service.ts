@@ -293,7 +293,7 @@ export class ExperienceService {
       school: 'RIT',
       toolsUsed: [],
       learningDescription:
-        'Throughout high school and college I learned calculus, up through multivariable. The knowledge is a greate tool for being able to understand any physical or purely mathematical problem.',
+        'Throughout high school and college I learned calculus, up through multivariable. The knowledge is a great tool for being able to understand any physical or purely mathematical problem.',
 
       importance: Importance.important,
     },
